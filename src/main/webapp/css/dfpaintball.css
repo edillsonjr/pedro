@@ -1,0 +1,234 @@
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("../fonts/Open_Sans/OpenSans-Semibold.ttf");
+  font-size: 1em;
+}
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url("../fonts/Open_Sans/OpenSans-Light.ttf");
+  font-size: 1em;
+}
+
+#corpo {
+  margin:0px auto; /* centraliza a div na página */
+  text-align:left; /* alinha o texto à esquerda */
+  width:980px; /* definimos uma largura de 700px */
+  background-color:#f5f5f5; /* definimos a cor de fundo da div */
+  border:1px solid #000; /* definimos os atributos da borda da div */
+  padding-bottom:12px; /* definimos o espaçamento da base */
+}
+#menu {
+  background: #252525;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+#menu ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#menu ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+#menu.align-right ul li {
+  float: right;
+}
+#menu.align-center ul {
+  text-align: center;
+}
+#menu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#menu ul li a:hover {
+  color: #ffffff;
+}
+#menu ul li a:hover:before {
+  width: 100%;
+}
+#menu ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#menu ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #ffffff;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#menu ul li.last > a:after,
+#menu ul li:last-child > a:after {
+  display: none;
+}
+#menu ul li.active a {
+  color: #ffffff;
+}
+#menu ul li.active a:before {
+  width: 100%;
+}
+#menu.align-right li.last > a:after,
+#menu.align-right li:last-child > a:after {
+  display: block;
+}
+#menu.align-right li:first-child a:after {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #menu ul li {
+    float: none;
+    display: block;
+  }
+  #menu ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fb998c;
+  }
+  #menu ul li.last > a,
+  #menu ul li:last-child > a {
+    border: 0;
+  }
+  #menu ul li a:after {
+    display: none;
+  }
+  #menu ul li a:before {
+    display: none;
+  }
+}
+#conteudo {
+  text-align:justify;
+  font-family: "OpenSans-Semibold";
+}
+#lateral {
+  float: right;
+  padding: 4px;
+  margin:10px 5px 0px 50px;
+  border: 1px solid #AAA;
+}
+#rodape {
+  font-family: "OpenSans-Light";
+  clear:right; /* limpamos a flutuação da div lateral em relação a div rodape */
+  margin:0px auto; /* centraliza a div na página */
+  width:975px; /* definimos uma largura de 690px */
+  background-image: url("../img/rodape.jpg"); /* definimos uma imagem de fundo */
+  border-top:3px solid #252525; /* definimos os atributos da borda superior */
+  font-size:12px; /* definimos o tamanho da fonte em nossa div */
+  color:#dedede; /* definimos a cor da fonte em nossa div */
+  text-align:left; /* texto alinhado a direita */
+  padding:5px 5px 5px 5px; /* espaçamento no sentido horário(topo,direita,base,esquerda) */
+  position:relative; /* definimos que a nossa div tem posição relativa */
+  top:10px; /* com isso definimos que ela vai ter margem de 10px do topo */
+}
+#slide { 
+  width: 975px; 
+  overflow: 
+  hidden; 
+  height: 300px; 
+  margin: 3px auto; box-shadow: 0 0 8px #000;
+  position: relative;
+}
+#slide img {
+  position: absolute;
+  z-index: 1; 
+  display: none; 
+  left: 0;
+}
+#slide p {
+  z-index:2;
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  padding: 10px; 
+  font-family: Arial; 
+  font-size: 14px; 
+  background: rgba(0,0,0,0.7);  
+  color: #fff;
+}
+
+#galeriapage {
+    margin:10px 5px 60px 0px; /* margem no sentido horário(topo,direita,base,esquerda) */
+    text-indent:0px; /* espaçamento de 20px nos parágrafos */
+    text-align:justify; /* texto justificado */
+    font-size:20px;
+}
+
+#painelprecos {
+  width: 880px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+#textoprecos {
+  text-align: left;
+  font-family: "OpenSans-Light";
+}
+
+.panel-default>.panel-heading {
+  background-color: #494949;
+  color: #fff;
+}
+
+#textolocalizacao {
+  font-family: "OpenSans-Light";
+}
+
+#equipamentosregras {
+    margin:0px 80px 10px 30px; /* margem no sentido horário(topo,direita,base,esquerda) */
+    text-indent:0px; /* espaçamento de 20px nos parágrafos */
+    text-align:justify; /* texto justificado */
+    font-family: "OpenSans-Semibold";
+
+}
+
+#conteudo4 {
+    margin:0px 80px 10px 30px; /* margem no sentido horário(topo,direita,base,esquerda) */
+    text-indent:0px; /* espaçamento de 20px nos parágrafos */
+    text-align:justify; /* texto justificado */
+}

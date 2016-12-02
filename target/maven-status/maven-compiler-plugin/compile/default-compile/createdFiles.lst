@@ -1,0 +1,9 @@
+com\dfpaintball\controller\Equipe.class
+com\dfpaintball\model\PerfilDAO.class
+com\dfpaintball\controller\Usuario.class
+com\dfpaintball\model\AgendamentoDAO.class
+com\dfpaintball\model\Conexao.class
+com\dfpaintball\model\UsuarioDAO.class
+com\dfpaintball\controller\Perfil.class
+com\dfpaintball\model\EquipeDAO.class
+com\dfpaintball\controller\Agendamento.class
