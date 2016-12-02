@@ -51,7 +51,7 @@
 
                         <div class="col-md-12">
 
-                            <form id="cadastro" name="cadastro" method="post" action="tratarUsuario.jsp">
+                            <form id="cadastro" name="cadastro" method="post" action="tratarUsuario.jsp?action=cadastrar">
 
 
                                 <div style="margin-left: 120px; width: 700px;">
