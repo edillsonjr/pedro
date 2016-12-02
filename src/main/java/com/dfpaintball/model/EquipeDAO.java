@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class EquipeDAO extends Conexao {
 
     public ArrayList<Equipe> listar() throws Exception {
-     abrirBanco();
+        abrirBanco();
         ArrayList<Equipe> lista = new ArrayList<>();
-        pstmt =  con.prepareStatement("SELECT * FROM equipe "
+        pstmt = con.prepareStatement("SELECT * FROM equipe "
                 + "ORDER BY pontos DESC");
         System.out.println(pstmt);
         rs = pstmt.executeQuery();
@@ -85,11 +85,11 @@ public class EquipeDAO extends Conexao {
 
     }
 
-    public void Excluir(Equipe equipe) throws Exception {
+    public void excluir(String id) throws Exception {
         abrirBanco();
         pstmt = (PreparedStatement) con.prepareStatement("DELETE FROM equipe "
-                + "WHERE idEquipe=?");
-        pstmt.setInt(1, equipe.getIdEquipe());
+                + "WHERE id_equipe=?");
+        pstmt.setString(1, id);
         pstmt.executeUpdate();
         fecharBanco();
     }

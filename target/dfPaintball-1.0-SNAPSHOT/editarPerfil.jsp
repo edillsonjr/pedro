@@ -61,7 +61,7 @@
 
                 </div>
 
-                <div class="col-md-9" style="width: 600px; margin-top: 20px;">
+                <div class="col-md-9" style="width: 500px; margin-top: 20px;">
 
 
                     <form id="editarperfil" name="editarperfil" method="post" action="tratarUsuario.jsp?action=editar">
@@ -69,31 +69,31 @@
 
 
 
-                        <div style="margin-left: 120px; width: 700px;">
+                        <div style="margin-left: 60px; width: 600px;">
 
                             <div class="form-group">
                                 <label for="nome">Nome:</label><font color="red">*</font>
-                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" required>
+                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome">
                             </div>
 
                             <div class="form-group">
                                 <label for="nome">CPF:</label><font color="red">*</font>
-                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Digite seu CPF" required>
+                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Digite seu CPF">
                             </div>
 
                             <div class="form-group">
                                 <label for="nome">Telefone:</label><font color="red">*</font>
-                                <input type="text" name="telefone" id="telefone" class="form-control" placeholder="Digite seu telefone" required>
+                                <input type="text" name="telefone" id="telefone" class="form-control" placeholder="Digite seu telefone">
                             </div>
 
                             <div class="form-group">
                                 <label for="nome">Endereço:</label><font color="red">*</font>
-                                <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Digite seu endereço" required>
+                                <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Digite seu endereço" >
                             </div>
 
                             <div class="form-group">
                                 <label for="nome">Email:</label><font color="red">*</font>
-                                <input type="text" name="email" id="email" class="form-control" placeholder="Digite seu email" required>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Digite seu email" >
                             </div>
 
                             <strong>SEXO:</strong>
@@ -104,12 +104,12 @@
 
                             <div class="form-group">
                                 <label for="nome">Login:</label><font color="red">*</font>
-                                <input type="text" maxlength=45 name="login" id="login" class="form-control" placeholder="Digite seu login" style="width:250px" required>
+                                <input type="text" maxlength=45 name="login" id="login" class="form-control" placeholder="Digite seu login" style="width:250px" >
                             </div>
 
                             <div class="form-group">
                                 <label for="nome">Senha:</label><font color="red">*</font>
-                                <input type="password" maxlength=45 name="senha" id="senha" class="form-control" placeholder="Digite sua senha" style="width:250px" required>
+                                <input type="password" maxlength=45 name="senha" id="senha" class="form-control" placeholder="Digite sua senha" style="width:250px" >
                             </div>
 
 

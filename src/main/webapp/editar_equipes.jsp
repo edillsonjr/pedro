@@ -93,7 +93,7 @@
 
 
                                             <td>
-                                                <a href='tratarAgendamento.jsp?action=excluir&id=<c:out value="${equipes.getIdEquipe()}"/>'>Excluir</a></td>
+                                                <a href='tratarRegistroEquipe.jsp?action=excluir&id=<c:out value="${equipes.getIdEquipe()}"/>'>Excluir</a></td>
                                     </tr>
 
                                 </c:forEach>

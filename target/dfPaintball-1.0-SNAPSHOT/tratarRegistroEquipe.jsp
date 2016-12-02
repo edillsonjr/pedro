@@ -31,6 +31,17 @@
             EquipeDAO ed = new EquipeDAO();
             ed.editar(e);
             request.getRequestDispatcher("painel.jsp").forward(request, response);
+        } else if (action.equalsIgnoreCase("excluir")) {
+            EquipeDAO edao = new EquipeDAO();
+            String id = request.getParameter("id");
+
+            try {
+                edao.excluir(id);
+                request.getRequestDispatcher("painel.jsp").forward(request, response);
+            } catch (Exception e) {
+                out.print("ERRO!!!" + e.getMessage());
+
+            }
         }
 
     } catch (NullPointerException npe) {

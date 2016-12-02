@@ -36,9 +36,9 @@ public class UsuarioDAO extends Conexao {
                 + "?,"
                 + "?)";
         pstmt = (PreparedStatement) con.prepareStatement(sql);
-        pstmt.setString(9, c.getLogin());
-        pstmt.setString(8, c.getSenha());
-        pstmt.setInt(6, 2);
+        pstmt.setString(8, c.getLogin());
+        pstmt.setString(9, c.getSenha());
+        pstmt.setInt(6, 1);
 
         pstmt.setString(2, c.getNome());
         pstmt.setString(3, c.getSexo().substring(0, 1));
@@ -125,6 +125,7 @@ public class UsuarioDAO extends Conexao {
         while (rs.next()) {
             Usuario usuario = new Usuario();
 
+            usuario.setId(rs.getInt("id"));
             usuario.setLogin(rs.getString("login"));
             usuario.setSenha(rs.getString("senha"));
 
@@ -139,22 +140,86 @@ public class UsuarioDAO extends Conexao {
     }
 
     public void editar(Usuario c) throws Exception {
-
         System.err.print(c.toString());
+        String sql = "UPDATE usuario set ";
+        if (c.getNome() != null) {
+            System.err.print("nome=? ");
+            sql.concat(sql + "nome=? ");
+            pstmt.setString(1, c.getNome());
+        }
+
+        if (c.getCpf().contains("null")) {
+            System.err.print("cpf=? ");
+            if (c.getNome() != null) {
+                sql.concat(sql + " , ");
+            }
+            sql.concat(sql + "cpf=? ");
+            pstmt.setString(2, c.getCpf());
+        }
+        if (c.getTelefone() != null) {
+            System.err.print(c.toString());
+            if (sql.contains("?")) {
+                sql.concat(sql + " , ");
+            }
+            sql.concat(sql + "telefone=? ");
+            pstmt.setString(3, c.getTelefone());
+        }
+
+        if (c.getEndereco() != null) {
+            System.err.print(c.toString());
+            if (sql.contains("?")) {
+                sql.concat(sql + " , ");
+            }
+            sql.concat(sql + "endereco=? ");
+            pstmt.setString(4, c.getEndereco());
+        }
+        if (c.getEmail() != null) {
+            System.err.print(c.toString());
+            if (sql.contains("?")) {
+                sql.concat(sql + " , ");
+            }
+            sql.concat(sql + "email=? ");
+            pstmt.setString(5, c.getEmail());
+        }
+        if (c.getSexo() != null) {
+            System.err.print(c.toString());
+            if (sql.contains("?")) {
+                sql.concat(sql + " , ");
+            }
+            sql.concat(sql + "sexo=? ");
+            pstmt.setString(6, c.getSexo());
+        }
+        if (c.getLogin() != null) {
+            System.err.print(c.toString());
+            if (sql.contains("?")) {
+                sql.concat(sql + " , ");
+            }
+            sql.concat(sql + "login=?");
+            pstmt.setString(
+                    7, c.getLogin());
+        }
+        if (c.getSenha() != null) {
+            System.err.print(c.toString());
+            if (sql.contains("?")) {
+                sql.concat(sql + " , ");
+            }
+            sql.concat(sql + "senha=?");
+
+            pstmt.setString(
+                    8, c.getSenha());
+        }
+
         abrirBanco();
-        String sql = "UPDATE usuario set nome=?, cpf=?, telefone=?, endereco=?, email=?, sexo=?, login=?, senha=?  where id=?";
+        sql.concat(sql + " where id =  ?");
+
         pstmt = (PreparedStatement) con.prepareStatement(sql);
-        pstmt.setString(1, c.getNome());
-        pstmt.setString(2, c.getCpf());
-        pstmt.setString(3, c.getTelefone());
-        pstmt.setString(4, c.getEndereco());
-        pstmt.setString(5, c.getEmail());
-        pstmt.setString(6, c.getSexo());
-        pstmt.setString(7, c.getLogin());
-        pstmt.setString(8, c.getSenha());
-        pstmt.setInt(9, c.getId());
+
+        pstmt.setInt(
+                9, c.getId());
         System.err.print(pstmt);
+
         pstmt.execute();
+
         fecharBanco();
 
     }
